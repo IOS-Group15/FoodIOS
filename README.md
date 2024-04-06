@@ -1,4 +1,4 @@
-# FoodIOS
+# Personal Budget Management
 Original App Design Project - README Template
 ===
 

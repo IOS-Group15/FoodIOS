@@ -84,13 +84,15 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
   * Leads to [**Registration Screen**]
 - [ ] [**Dashboard**]
   * No further navigation.
-- [ ] [**Add Transition Screen (Transaction Tab)**]
+- [ ] [**Add Transition Button (Transaction Tab)**]
   * Leads to [**Add Transition Screen**] to add a new transaction.
-- [ ] [**Create New Budget Screen (Budget Tab)**]
+- [ ] [**Create New Budget Button (Budget Tab)**]
   * Leads to [**Create New Budget Screen**] to add a new budget.
-- [ ] [**Settings Tab**]
+- [ ] [**Profile Settings Cell**]
   * Leads to [**Profile Settings Screen**] for updating profile information.
+- [ ] [**Profile Notification  Cell**]
   * Leads to [**Notification Settings Screen**] for managing notifications.
+- [ ] [**Profile Link Account Cell**]
   * Leads to [**Link Account Screen**] to connect external accounts.
 
 

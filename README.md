@@ -15,7 +15,8 @@ Original App Design Project - README Template
 
 ### Description
 
-[Provide a brief description of your app, its purpose, and functionality.]
+Pokket simplifies financial tracking and budgeting by allowing users to set up and manage monthly budgets for various categories like food, entertainment, and utilities. Users can easily log expenses by scanning receipts or entering details manually, and the app deducts these amounts from the corresponding budget category. It also provides notifications to help users stay within their spending limits, and the budget automatically resets at user-defined intervals. Pokket combines convenience and control, making it easier for users to manage their finances efficiently in one place.
+
 
 ### App Evaluation
 

@@ -21,12 +21,12 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
 ### App Evaluation
 
 [Evaluation of your app across the following attributes]
-- **Category:** [e.g., Social, Entertainment, Education]
-- **Mobile:** [Is it a mobile application only?]
-- **Story:**  [What story does your app tell?]
-- **Market:** [Target audience for the app]
-- **Habit:** [Is it a daily use app or occasional use?]
-- **Scope:** [Is it a broad or narrow app in terms of features?]
+- **Category:** Personal Finance, Productivity
+- **Mobile:** Yes, it's only for iPhones.
+- **Story:**  The app helps iPhone users manage money better.
+- **Market:** It's for anyone with an iPhone who wants to control spending.
+- **Habit:** Use it every day or just sometimes.
+- **Scope:** It does essential money tasks on iPhones
 
 ## Product Spec
 

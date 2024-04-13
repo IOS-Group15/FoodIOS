@@ -85,8 +85,6 @@ Original App Design Project - README Template
 
 ## Wireframes
 
-[Add picture of your hand sketched wireframes in this section]
-
 ### Digital Wireframes & Mockups
 <img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/a594813f-571b-4c63-943e-2156dee943ac" alt="Pokket Mobile_Page_01" width="20%">
 <img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/5142ca69-4304-4ca4-848e-130ca781465f" alt="Pokket Mobile_Page_02" width="20%">

@@ -87,9 +87,25 @@ Original App Design Project - README Template
 
 [Add picture of your hand sketched wireframes in this section]
 
-### [BONUS] Digital Wireframes & Mockups
+### Digital Wireframes & Mockups
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/a594813f-571b-4c63-943e-2156dee943ac" alt="Pokket Mobile_Page_01" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/5142ca69-4304-4ca4-848e-130ca781465f" alt="Pokket Mobile_Page_02" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/e1c6aac4-f30f-442f-b175-d21c1c97ccfe" alt="Pokket Mobile_Page_05" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/75cd070f-38c3-4981-bd72-fae0a4ec9802" alt="Pokket Mobile_Page_06" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/a46b2b20-d8dc-40c5-8dcf-3b4ceec8851d" alt="Pokket Mobile_Page_07" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/f6a828d4-d13e-43da-9e9f-a3f708e01182" alt="Pokket Mobile_Page_08" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/d479371a-92ac-4b55-8e2d-983e042aa937" alt="Pokket Mobile_Page_09" width="20%">
+<img src="https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/182efffd-6bf3-4791-a48a-0e9d6e2b865d" alt="Pokket Mobile_Page_10" width="20%">
 
-### [BONUS] Interactive Prototype
+
+
+### Interactive Prototype
+
+<div>
+    <a href="https://www.loom.com/share/4172c5074feb474883b9d85081731ac6">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/4172c5074feb474883b9d85081731ac6-with-play.gif">
+    </a>
+  </div>
 
 ## Schema 
 

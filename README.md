@@ -119,6 +119,14 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
     </a>
   </div>
 
+## Sprint 1
+<div>
+    <a href="https://www.loom.com/share/f9dd9f0171b44d179575e8c440f0fcf3">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f9dd9f0171b44d179575e8c440f0fcf3-with-play.gif">
+    </a>
+  </div>
+
+
 ## Schema 
 
 

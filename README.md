@@ -38,7 +38,7 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
 * User can securely log in to access their budget information, ensuring privacy and data security.
 * User can track their expenses over a budget period to monitor their spending.
 * User can accurately categorize their expenses, providing insights into spending habits for better financial management.
-* User can set monthly budgets for different expense categories, enabling them to control their spending effectively.
+* User can see monthly budgets for different expense categories, enabling them to control their spending effectively.
 * User receives notifications when they exceed their budget limits, helping them avoid overspending and stay within their financial boundaries.
 * User can track their progress towards financial goals, fostering motivation and accountability in achieving desired objectives.
 
@@ -60,8 +60,8 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
   * User can track and categorize their expenses.
 - [ ] **Add a Transaction Screen**
   * User can add a transaction to their expenses.
-- [ ] **Budget Screen**
-  * User can set and manage their budget for different expense categories.
+- [x] **Budget Screen**
+  * User can see their budget for different expense categories.
 - [ ] **Add a Budget Screen**
   * User can add a budget limit for different expense categories.
 - [ ] **Settings Screen**
@@ -71,10 +71,10 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
 
 **Tab Navigation** (Tab to Screen)
 
-- [ ] **Dashboard Tab**: Dashboard Screen
-- [ ] **Expense Tab**: Expense Screen
-- [ ] **Budget Tab**: Budget Screen
-- [ ] **Settings Tab**: Settings Screen
+- [x] **Dashboard Tab**: Dashboard Screen
+- [x] **Expense Tab**: Expense Screen
+- [x] **Budget Tab**: Budget Screen
+- [x] **Settings Tab**: Settings Screen
 
 **Flow Navigation** (Screen to Screen)
 
@@ -118,6 +118,14 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/4172c5074feb474883b9d85081731ac6-with-play.gif">
     </a>
   </div>
+
+## Sprint 1
+<div>
+    <a href="https://www.loom.com/share/f9dd9f0171b44d179575e8c440f0fcf3">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f9dd9f0171b44d179575e8c440f0fcf3-with-play.gif">
+    </a>
+  </div>
+
 
 ## Schema 
 

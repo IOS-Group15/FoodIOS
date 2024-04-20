@@ -7,14 +7,15 @@
 
 import SwiftUI
 
+//@Observable
 struct BudgetCategory: Identifiable, Hashable {
     let id = UUID()
-    let name: String
-    let budgetAmount: Double
+    var name: String
+    var budgetAmount: Double
     let numberOfTransactions: Int
     let percentageChange: Double
     let currentSpent: Double
-    let categoryType: BudgetCategoryType
+    var categoryType: BudgetCategoryType
 }
 
 enum BudgetCategoryType: String, CaseIterable {
@@ -29,6 +30,7 @@ struct BudgetsView: View {
     @State private var path = NavigationPath()
     
     @StateObject var budgetManager = BudgetManager()
+//    @State var budgetCategory: BudgetCategory?
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.accent]
@@ -65,6 +67,7 @@ struct BudgetsView: View {
 struct BudgetListView: View {
     let budgetTitle: String
     @Binding var budgetCategories: [BudgetCategory]
+    @State var selectedBudgetCategory: BudgetCategory = BudgetCategory(name: "", budgetAmount: 0.0, numberOfTransactions: 0, percentageChange: 0.0, currentSpent: 0.0, categoryType: .entertainment)
     
     var body: some View {
         VStack {
@@ -117,12 +120,16 @@ struct BudgetListView: View {
                         }
                     }
                 }
+                
             }
             .padding(.vertical, 5)
             .navigationTitle("Pokket")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: BudgetCategory.self) { budgetCategory in
-                Text("Detail View for \(budgetCategory.name)")
+                EditBudgetView(budgetCategory: $selectedBudgetCategory)
+                    .onAppear() {
+                        selectedBudgetCategory = budgetCategory
+                    }
             }
         }
         .padding(.bottom)

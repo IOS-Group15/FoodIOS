@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettigsView: View {
-    @Environment(AuthViewModel.self) var authViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         // We have a logged in user, go to ChatView

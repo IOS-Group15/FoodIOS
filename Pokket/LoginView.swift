@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct LoginView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var saveUsername: Bool = false
@@ -16,8 +17,7 @@ struct LoginView: View {
     @State private var isEmailValid: Bool = true
     @State private var showInvalidEmailMessage: Bool = false
    
-    @Environment(AuthViewModel.self) var authViewModel
-    
+
     @State var isNavigationg = true
     
     var body: some View {
@@ -85,7 +85,7 @@ struct LoginView: View {
                     Button(action: {
                         showInvalidEmailMessage = !isEmailValid
                     if isEmailValid {
-                        authViewModel.signIn(email: email, password: password)
+//                        authViewModel.signIn(email: email, password: password)
                         
                         }
                     }) {

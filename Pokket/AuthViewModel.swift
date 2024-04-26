@@ -11,32 +11,24 @@ import FirebaseFirestore
 import Combine
 
 class AuthViewModel: ObservableObject {
-    // A property to store the logged in user. User is an object provided by FirebaseAuth framework
     @Published var user: User?
     @Published var signInState: SignInState = .signedOut
-    var authError: PassthroughSubject<String, Never> = PassthroughSubject()
+    @Published var signInError: String = ""  
+    @Published var isSigningIn: Bool = false
 
-    // Determines if AuthManager should use mocked data
+    private var cancellables = Set<AnyCancellable>()
     let isMocked: Bool
-
-    var userEmail: String? {
-        // If mocked, return a mocked email string, otherwise return the users email if available
-        isMocked ? "pakket@gmail.com" : user?.email
-    }
 
     init(isMocked: Bool = false) {
         self.isMocked = isMocked
-        // Listen for authentication state changes
         Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             self?.user = user
             self?.signInState = user == nil ? .signedOut : .signedIn
         }
     }
-    
+
     enum SignInState {
-        case signedIn
-        case signedOut
-        case error(String)
+        case signedIn, signedOut, error(String)
     }
 
     func signUp(name: String, email: String, password: String) async throws {
@@ -45,11 +37,10 @@ class AuthViewModel: ObservableObject {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             try await userReference.document(result.user.uid).setData(["name": name, "email": email])
         } catch {
-            authError.send("Failed to sign up: \(error.localizedDescription)")
+            signInError = "Failed to sign up: \(error.localizedDescription)"
             throw error
         }
     }
-
 
     func signIn(email: String, password: String) async {
         do {
@@ -57,8 +48,8 @@ class AuthViewModel: ObservableObject {
             user = authResult.user // <-- Set the user
             signInState = .signedIn
         } catch {
-            authError.send("Failed to sign in: \(error.localizedDescription)")
-            signInState = .error(error.localizedDescription)
+            signInError = "Failed to sign in: \(error.localizedDescription)"
+            signInState = .error(signInError)
         }
     }
 
@@ -68,10 +59,9 @@ class AuthViewModel: ObservableObject {
             user = nil // <-- Set user to nil after sign out
             signInState = .signedOut
         } catch {
-            authError.send("Error signing out: \(error.localizedDescription)")
-            signInState = .error(error.localizedDescription)
+            signInError = "Error signing out: \(error.localizedDescription)"
+            signInState = .error(signInError)
         }
     }
 }
-
 

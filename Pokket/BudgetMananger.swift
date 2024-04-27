@@ -19,17 +19,23 @@ class BudgetManager: ObservableObject {
     }
     
     func addBudgetCategory(_ category: BudgetCategory) {
+        guard let uid = AuthViewModel.shared.user?.uid else {
+            return
+        }
         do {
-            let docRef = try db.collection("budgetCategories").addDocument(from: category)
+            try db.collection("users/\(AuthViewModel.shared.user!.uid)/budgetCategories").addDocument(from: category)
         } catch {
             print("Error adding budget category: \(error)")
         }
     }
     
     func updateBudgetCategory(_ category: BudgetCategory) {
+        guard let uid = AuthViewModel.shared.user?.uid else {
+            return
+        }
         if let id = category.id {
             do {
-                try db.collection("budgetCategories").document(id).setData(from: category)
+                try db.collection("users/\(uid)/budgetCategories").document(id).setData(from: category)
             } catch {
                 print("Error updating budget category: \(error)")
             }
@@ -37,7 +43,10 @@ class BudgetManager: ObservableObject {
     }
     
     func load() {
-        db.collection("budgetCategories").getDocuments { (querySnapshot, error) in
+        guard let uid = AuthViewModel.shared.user?.uid else {
+            return
+        }
+        db.collection("users/\(uid)/budgetCategories").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {

@@ -18,6 +18,8 @@ class AuthViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
     let isMocked: Bool
+    
+    static let shared = AuthViewModel()
 
     init(isMocked: Bool = false) {
         self.isMocked = isMocked

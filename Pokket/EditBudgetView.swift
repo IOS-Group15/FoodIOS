@@ -45,13 +45,13 @@ struct EditBudgetView: View {
             }, label: {
                 GreenButton(imageSystemName: "", text: "Update")
             })
-            .alert("Budget Added", isPresented: $showingAlert) {
+            .alert("Budget Updated", isPresented: $showingAlert) {
                 Button("OK", role: .cancel) {
                     BudgetManager.shared.updateBudgetCategory(budgetCategory)
                     BudgetManager.shared.load()
                 }
             } message: {
-                Text("The new budget has been added.")
+                Text("The budget has been updated.")
             }
             .padding(.horizontal)
             .padding(.horizontal)

@@ -5,32 +5,52 @@
 //  Created by Minh Huynh on 4/19/24.
 //
 import SwiftUI
+import FirebaseFirestore
 
 class BudgetManager: ObservableObject {
-    @Published var monthlyBudgetCategories = [
-        BudgetCategory(name: "Groceries", budgetAmount: 500.0, numberOfTransactions: 6, percentageChange: 68.3, currentSpent: 400.0, categoryType: .groceries),
-        BudgetCategory(name:"Shopping", budgetAmount: 400.0, numberOfTransactions: 6, percentageChange: 32.1, currentSpent: 350.5, categoryType: .shopping),
-        BudgetCategory(name: "Entertainment", budgetAmount: 200.0, numberOfTransactions: 6, percentageChange: -16.8, currentSpent: 195.5, categoryType: .entertainment)
-    ]
-
-    @Published var semesterBudgetCategories = [
-        BudgetCategory(name: "Subscriptions", budgetAmount: 100.0, numberOfTransactions: 6, percentageChange: 11.5, currentSpent: 90.0, categoryType: .subscriptions),
-        BudgetCategory(name: "Utilities", budgetAmount: 100.0, numberOfTransactions: 6, percentageChange: -9.0, currentSpent: 120, categoryType: .utilities)
-    ]
-
-    func addBudgetCategory(_ budgetCategory: BudgetCategory) {
-        monthlyBudgetCategories.append(budgetCategory)
+    @Published var budgetCategories: [BudgetCategory] = []
+    @Published var monthlyBudgetCategories: [BudgetCategory] = []
+    @Published var semesterBudgetCategories: [BudgetCategory] = []
+    
+    private let db = Firestore.firestore()
+    
+    init() {
     }
-
-    func updateBudgetCategory(_ budgetCategory: BudgetCategory) {
-        if let index = monthlyBudgetCategories.firstIndex(where: { $0.id == budgetCategory.id }) {
-            monthlyBudgetCategories[index] = budgetCategory
+    
+    func addBudgetCategory(_ category: BudgetCategory) {
+        // Combine all budget categories into a single array on Firestore
+        let db = Firestore.firestore()
+        do {
+            try db.collection("budgetCategories").addDocument(from: category)
+        } catch {
+            print("Error adding budget category: \(error)")
         }
     }
-
-    func deleteBudgetCategory(_ budgetCategory: BudgetCategory) {
-        if let index = monthlyBudgetCategories.firstIndex(where: { $0.id == budgetCategory.id }) {
-            monthlyBudgetCategories.remove(at: index)
+    
+    func updateBudgetCategory(_ category: BudgetCategory) {
+        // Update the budget category on Firestore
+        let db = Firestore.firestore()
+        do {
+            try db.collection("budgetCategories").document(category.id.uuidString).setData(from: category)
+        } catch {
+            print("Error updating budget category: \(error)")
+        }
+    }
+    
+    func load() {
+        // Load data from Firestore or other data source
+        let db = Firestore.firestore()
+        db.collection("budgetCategories").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                self.budgetCategories = querySnapshot!.documents.compactMap { document in
+                    try? document.data(as: BudgetCategory.self)
+                }
+                // Separate the budget categories into monthly and semester arrays
+                self.monthlyBudgetCategories = self.budgetCategories.filter { $0.budgetPeriod == .monthly }
+                self.semesterBudgetCategories = self.budgetCategories.filter { $0.budgetPeriod == .semester }
+            }
         }
     }
 }

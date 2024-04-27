@@ -21,7 +21,9 @@ struct PokketApp: App {
             if authViewModel.user != nil { // <-- Check if you have a non-nil user (means there is a logged in user)
                 NavigationStack {
                     MainView()
-                        .environmentObject(authViewModel)
+                        .environmentObject(authViewModel)  // Pass AuthViewModel using environmentObject
+                        .navigationTitle("Pokket")
+                        .navigationBarTitleDisplayMode(.inline)
                 }
             } else {
                 // No logged in user, go to LoginView

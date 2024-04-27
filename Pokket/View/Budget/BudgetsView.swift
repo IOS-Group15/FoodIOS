@@ -6,23 +6,25 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
-struct BudgetCategory: Identifiable, Hashable {
-    let id = UUID()
-    let name: String
-    let budgetAmount: Double
+struct BudgetCategory: Identifiable, Hashable, Codable {
+    @DocumentID var id: String?
+    var name: String
+    var budgetAmount: Double
     let numberOfTransactions: Int
     let percentageChange: Double
     let currentSpent: Double
-    let categoryType: BudgetCategoryType
+    var categoryType: BudgetCategoryType
+    var budgetPeriod: BudgetPeriod
 }
 
-enum BudgetCategoryType: String, CaseIterable {
-    case groceries = "basket"
-    case shopping = "cart"
-    case entertainment = "ticket"
-    case subscriptions = "creditcard"
-    case utilities = "lightbulb"
+enum BudgetCategoryType: String, CaseIterable, Codable {
+    case groceries, shopping, entertainment, subscriptions, utilities, other
+}
+
+enum BudgetPeriod: String, CaseIterable, Codable {
+    case monthly, semester
 }
 
 struct BudgetsView: View {
@@ -35,44 +37,42 @@ struct BudgetsView: View {
     }
     
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack {
-                BudgetListView(budgetTitle: "Monthly Budget", budgetCategories: $budgetManager.monthlyBudgetCategories)
-                BudgetListView(budgetTitle: "Semester Budget", budgetCategories: $budgetManager.semesterBudgetCategories)
-                Spacer()
-                NavigationLink(value: "Add New Budget") {
-                    Spacer()
-                    Image(systemName: "plus")
-                    Text("Add New Budget")
-                        .padding(15)
-                    Spacer()
+        VStack {
+            ScrollView {
+                VStack {
+                    BudgetListView(budgetTitle: "Monthly Budget", budgetCategories: $budgetManager.monthlyBudgetCategories, datePeriod: "Apr 01 - Apr 30")
+                    BudgetListView(budgetTitle: "Semester Budget", budgetCategories: $budgetManager.semesterBudgetCategories, datePeriod: "Jan 01 - Jun 30")
                 }
-                .foregroundStyle(.white)
-                .fontWeight(.semibold)
-                .frame(width: .infinity)
-                .background(RoundedRectangle(cornerRadius: 20).fill(.green))
-                .navigationDestination(for: String.self) { title in
-                    Text(title)
-                }
+                .padding(.horizontal)
+                .padding()
+            }
+            Spacer()
+            NavigationLink(destination: AddBudgetView(budgetManager: budgetManager)) {
+                GreenButton(imageSystemName: "plus", text: "Add New Budget")
             }
             .padding(.horizontal)
-            .padding(.horizontal)
+            .padding()
         }
-        .padding(.bottom)
+        .onAppear(perform: budgetManager.load)
     }
 }
 
 struct BudgetListView: View {
     let budgetTitle: String
     @Binding var budgetCategories: [BudgetCategory]
+    @State var selectedBudgetCategory: BudgetCategory = BudgetCategory(name: "", budgetAmount: 0.0, numberOfTransactions: 0, percentageChange: 0.0, currentSpent: 0.0, categoryType: .entertainment, budgetPeriod: .monthly)
+    let datePeriod: String
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .bottom) {
                 Text(budgetTitle)
                     .font(.title2)
                     .fontWeight(.bold)
                 Spacer()
+                Text(datePeriod) // Display the date period
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
             ForEach(budgetCategories) { budgetCategory in
                 NavigationLink(value: budgetCategory) {
@@ -81,7 +81,7 @@ struct BudgetListView: View {
                             Circle()
                                 .fill(getColor(for: budgetCategory.categoryType))
                                 .overlay {
-                                    Image(systemName: budgetCategory.categoryType.rawValue)
+                                    Image(systemName: getIcon(for: budgetCategory.categoryType))
                                         .foregroundStyle(.white)
                                         .fontWeight(.semibold)
                                 }
@@ -99,16 +99,16 @@ struct BudgetListView: View {
                                     .font(.headline)
                                     .foregroundStyle(.black)
                                 Text("/ $\(budgetCategory.budgetAmount, specifier: "%.2f")")
-                                                                    .font(.caption)
-                                                                    .foregroundStyle(.gray)
-                                                                                         
+                                    .font(.caption)
+                                    .foregroundStyle(.gray)
+                                
                             }
                         }
                         .frame(maxHeight: 40)
                         
                         ProgressView(value: budgetCategory.currentSpent / budgetCategory.budgetAmount, total: 1)
-                                                            .progressViewStyle(.linear)
-                                                            .tint(budgetCategory.currentSpent > budgetCategory.budgetAmount ? .red : .green)
+                            .progressViewStyle(.linear)
+                            .tint(budgetCategory.currentSpent > budgetCategory.budgetAmount ? .red : .green)
                         HStack {
                             Spacer()
                             Text("\(budgetCategory.percentageChange > 0 ? "↓" : "↑")\(abs(budgetCategory.percentageChange), specifier: "%.1f")% compared to last month")
@@ -117,10 +117,11 @@ struct BudgetListView: View {
                         }
                     }
                 }
+                
             }
             .padding(.vertical, 5)
             .navigationDestination(for: BudgetCategory.self) { budgetCategory in
-                Text("Detail View for \(budgetCategory.name)")
+                EditBudgetView(budgetCategory: budgetCategory)
             }
         }
         .padding(.bottom)
@@ -138,13 +139,26 @@ struct BudgetListView: View {
             return Color.orange
         case .utilities:
             return Color.green
+        case .other:
+            return Color.gray
         }
     }
-}
-
-struct AddBudgetView: View {
-    var body: some View {
-        Text("Add Budget View")
+    
+    func getIcon(for categoryType: BudgetCategoryType) -> String {
+        switch categoryType {
+        case .groceries:
+            return "basket"
+        case .shopping:
+            return "cart"
+        case .entertainment:
+            return "ticket"
+        case .subscriptions:
+            return "creditcard"
+        case .utilities:
+            return "lightbulb"
+        case .other:
+            return "giftcard"
+        }
     }
 }
 

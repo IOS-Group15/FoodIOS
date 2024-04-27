@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1160ED0B2BD87EC2005DEBD3 /* SettigsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160ED092BD87EC2005DEBD3 /* SettigsView.swift */; };
-		1160ED0C2BD87EC2005DEBD3 /* SigUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160ED0A2BD87EC2005DEBD3 /* SigUpView.swift */; };
-		1160ED0E2BD87ECB005DEBD3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160ED0D2BD87ECB005DEBD3 /* LoginView.swift */; };
-		1160ED102BD87ED5005DEBD3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160ED0F2BD87ED5005DEBD3 /* AuthViewModel.swift */; };
-		6E5F32DD2BDC803A003A980A /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F32DC2BDC803A003A980A /* TransactionsView.swift */; };
-		6E5F32DF2BDC822E003A980A /* AddTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F32DE2BDC822E003A980A /* AddTransactionsView.swift */; };
+		6E7065C92BDD64BE005DE93D /* BudgetMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065BE2BDD64BD005DE93D /* BudgetMananger.swift */; };
+		6E7065CA2BDD64BE005DE93D /* SettigsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065BF2BDD64BD005DE93D /* SettigsView.swift */; };
+		6E7065CB2BDD64BE005DE93D /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C02BDD64BD005DE93D /* EditBudgetView.swift */; };
+		6E7065CC2BDD64BE005DE93D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C12BDD64BD005DE93D /* AuthViewModel.swift */; };
+		6E7065CD2BDD64BE005DE93D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C22BDD64BD005DE93D /* LoginView.swift */; };
+		6E7065CE2BDD64BE005DE93D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C32BDD64BD005DE93D /* MainView.swift */; };
+		6E7065CF2BDD64BE005DE93D /* SigUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C42BDD64BD005DE93D /* SigUpView.swift */; };
+		6E7065D02BDD64BE005DE93D /* AddBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C52BDD64BE005DE93D /* AddBudgetView.swift */; };
+		6E7065D12BDD64BE005DE93D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C62BDD64BE005DE93D /* DataManager.swift */; };
+		6E7065D22BDD64BE005DE93D /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C72BDD64BE005DE93D /* Elements.swift */; };
+		6E7065D32BDD64BE005DE93D /* BudgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C82BDD64BE005DE93D /* BudgetsView.swift */; };
 		6ED4DCB82BD33C2300032E6B /* PokketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED4DCB72BD33C2300032E6B /* PokketApp.swift */; };
 		6ED4DCBC2BD33C2500032E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED4DCBB2BD33C2500032E6B /* Assets.xcassets */; };
 		6ED4DCBF2BD33C2500032E6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED4DCBE2BD33C2500032E6B /* Preview Assets.xcassets */; };
-		6ED4DCC82BD33CAB00032E6B /* BudgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED4DCC72BD33CAB00032E6B /* BudgetsView.swift */; };
-		6ED4DCCE2BD385F700032E6B /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED4DCCD2BD385F700032E6B /* EditBudgetView.swift */; };
-		6ED4DCD02BD386EA00032E6B /* BudgetMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED4DCCF2BD386EA00032E6B /* BudgetMananger.swift */; };
-		6ED4DCD22BD3907600032E6B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED4DCD12BD3907600032E6B /* MainView.swift */; };
 		81E6C2282BD43AA10002857A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81E6C2272BD43AA10002857A /* GoogleService-Info.plist */; };
 		81E6C22B2BD43D260002857A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6C22A2BD43D260002857A /* FirebaseAnalytics */; };
 		81E6C22D2BD43D260002857A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6C22C2BD43D260002857A /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -48,26 +49,25 @@
 		81E6C25B2BD43D260002857A /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6C25A2BD43D260002857A /* FirebaseRemoteConfigSwift */; };
 		81E6C25D2BD43D260002857A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6C25C2BD43D260002857A /* FirebaseStorage */; };
 		81E6C25F2BD43D260002857A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6C25E2BD43D260002857A /* FirebaseStorageCombine-Community */; };
-		81E6C2612BD9EE980002857A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C2602BD9EE980002857A /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1160ED092BD87EC2005DEBD3 /* SettigsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettigsView.swift; sourceTree = "<group>"; };
-		1160ED0A2BD87EC2005DEBD3 /* SigUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigUpView.swift; sourceTree = "<group>"; };
-		1160ED0D2BD87ECB005DEBD3 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		1160ED0F2BD87ED5005DEBD3 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		6E5F32DC2BDC803A003A980A /* TransactionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
-		6E5F32DE2BDC822E003A980A /* AddTransactionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionsView.swift; sourceTree = "<group>"; };
+		6E7065BE2BDD64BD005DE93D /* BudgetMananger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetMananger.swift; sourceTree = "<group>"; };
+		6E7065BF2BDD64BD005DE93D /* SettigsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettigsView.swift; sourceTree = "<group>"; };
+		6E7065C02BDD64BD005DE93D /* EditBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBudgetView.swift; sourceTree = "<group>"; };
+		6E7065C12BDD64BD005DE93D /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		6E7065C22BDD64BD005DE93D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6E7065C32BDD64BD005DE93D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		6E7065C42BDD64BD005DE93D /* SigUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigUpView.swift; sourceTree = "<group>"; };
+		6E7065C52BDD64BE005DE93D /* AddBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBudgetView.swift; sourceTree = "<group>"; };
+		6E7065C62BDD64BE005DE93D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6E7065C72BDD64BE005DE93D /* Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		6E7065C82BDD64BE005DE93D /* BudgetsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetsView.swift; sourceTree = "<group>"; };
 		6ED4DCB42BD33C2300032E6B /* Pokket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED4DCB72BD33C2300032E6B /* PokketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokketApp.swift; sourceTree = "<group>"; };
 		6ED4DCBB2BD33C2500032E6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ED4DCBE2BD33C2500032E6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6ED4DCC72BD33CAB00032E6B /* BudgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsView.swift; sourceTree = "<group>"; };
-		6ED4DCCD2BD385F700032E6B /* EditBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetView.swift; sourceTree = "<group>"; };
-		6ED4DCCF2BD386EA00032E6B /* BudgetMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetMananger.swift; sourceTree = "<group>"; };
-		6ED4DCD12BD3907600032E6B /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		81E6C2272BD43AA10002857A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		81E6C2602BD9EE980002857A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +108,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E7065D42BDD6528005DE93D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E7065D62BDD6540005DE93D /* Budget */,
+				6E7065C72BDD64BE005DE93D /* Elements.swift */,
+				6E7065C22BDD64BD005DE93D /* LoginView.swift */,
+				6E7065C32BDD64BD005DE93D /* MainView.swift */,
+				6E7065BF2BDD64BD005DE93D /* SettigsView.swift */,
+				6E7065C42BDD64BD005DE93D /* SigUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6E7065D52BDD6537005DE93D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E7065C12BDD64BD005DE93D /* AuthViewModel.swift */,
+				6E7065BE2BDD64BD005DE93D /* BudgetMananger.swift */,
+				6E7065C62BDD64BE005DE93D /* DataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E7065D62BDD6540005DE93D /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				6E7065C52BDD64BE005DE93D /* AddBudgetView.swift */,
+				6E7065C82BDD64BE005DE93D /* BudgetsView.swift */,
+				6E7065C02BDD64BD005DE93D /* EditBudgetView.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
 		6ED4DCAB2BD33C2300032E6B = {
 			isa = PBXGroup;
 			children = (
@@ -127,20 +160,11 @@
 		6ED4DCB62BD33C2300032E6B /* Pokket */ = {
 			isa = PBXGroup;
 			children = (
-				1160ED0F2BD87ED5005DEBD3 /* AuthViewModel.swift */,
-				81E6C2602BD9EE980002857A /* DataManager.swift */,
-				1160ED0D2BD87ECB005DEBD3 /* LoginView.swift */,
-				1160ED092BD87EC2005DEBD3 /* SettigsView.swift */,
-				1160ED0A2BD87EC2005DEBD3 /* SigUpView.swift */,
+				6E7065D52BDD6537005DE93D /* Model */,
+				6E7065D42BDD6528005DE93D /* View */,
 				6ED4DCB72BD33C2300032E6B /* PokketApp.swift */,
-				6ED4DCD12BD3907600032E6B /* MainView.swift */,
-				6ED4DCC72BD33CAB00032E6B /* BudgetsView.swift */,
-				6ED4DCCD2BD385F700032E6B /* EditBudgetView.swift */,
-				6E5F32DC2BDC803A003A980A /* TransactionsView.swift */,
-				6E5F32DE2BDC822E003A980A /* AddTransactionsView.swift */,
 				6ED4DCBB2BD33C2500032E6B /* Assets.xcassets */,
 				6ED4DCBD2BD33C2500032E6B /* Preview Content */,
-				6ED4DCCF2BD386EA00032E6B /* BudgetMananger.swift */,
 				81E6C2272BD43AA10002857A /* GoogleService-Info.plist */,
 			);
 			path = Pokket;
@@ -257,18 +281,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7065CD2BDD64BE005DE93D /* LoginView.swift in Sources */,
+				6E7065D32BDD64BE005DE93D /* BudgetsView.swift in Sources */,
+				6E7065D12BDD64BE005DE93D /* DataManager.swift in Sources */,
+				6E7065CE2BDD64BE005DE93D /* MainView.swift in Sources */,
+				6E7065D02BDD64BE005DE93D /* AddBudgetView.swift in Sources */,
+				6E7065CC2BDD64BE005DE93D /* AuthViewModel.swift in Sources */,
 				6ED4DCB82BD33C2300032E6B /* PokketApp.swift in Sources */,
-				81E6C2612BD9EE980002857A /* DataManager.swift in Sources */,
-				6ED4DCD22BD3907600032E6B /* MainView.swift in Sources */,
-				6ED4DCD02BD386EA00032E6B /* BudgetMananger.swift in Sources */,
-				6ED4DCC82BD33CAB00032E6B /* BudgetsView.swift in Sources */,
-				1160ED0C2BD87EC2005DEBD3 /* SigUpView.swift in Sources */,
-				6E5F32DD2BDC803A003A980A /* TransactionsView.swift in Sources */,
-				1160ED0B2BD87EC2005DEBD3 /* SettigsView.swift in Sources */,
-				1160ED0E2BD87ECB005DEBD3 /* LoginView.swift in Sources */,
-				6ED4DCCE2BD385F700032E6B /* EditBudgetView.swift in Sources */,
-				6E5F32DF2BDC822E003A980A /* AddTransactionsView.swift in Sources */,
-				1160ED102BD87ED5005DEBD3 /* AuthViewModel.swift in Sources */,
+				6E7065CA2BDD64BE005DE93D /* SettigsView.swift in Sources */,
+				6E7065CF2BDD64BE005DE93D /* SigUpView.swift in Sources */,
+				6E7065C92BDD64BE005DE93D /* BudgetMananger.swift in Sources */,
+				6E7065D22BDD64BE005DE93D /* Elements.swift in Sources */,
+				6E7065CB2BDD64BE005DE93D /* EditBudgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

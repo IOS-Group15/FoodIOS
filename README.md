@@ -127,11 +127,7 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
   </div>
 
 ## Sprint 2
-<div>
-    <a href="https://www.loom.com/share/f9dd9f0171b44d179575e8c440f0fcf3">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f9dd9f0171b44d179575e8c440f0fcf3-with-play.gif">
-    </a>
-  </div>
+![j_Z9Ttl2](https://github.com/IOS-Group15/Personal-Budget-Management/assets/38261965/8af34efc-af30-4067-b64e-17b5c7cdf4a1)
 
 
 ## Schema 

@@ -10,12 +10,10 @@ import FirebaseCore
 
 @main
 struct PokketApp: App {
-    
-    @State private var authViewModel: AuthViewModel
-    
+    @StateObject private var authViewModel = AuthViewModel()  // Use StateObject for lifecycle management
+
     init() {
         FirebaseApp.configure()
-        authViewModel = AuthViewModel()
     }
     
     var body: some Scene {
@@ -24,10 +22,9 @@ struct PokketApp: App {
                 MainView()
                     .environment(authViewModel)
             } else {
-                
                 // No logged in user, go to LoginView
                 LoginView()
-                    .environment(authViewModel)
+                    .environmentObject(authViewModel)
             }
         }
     }

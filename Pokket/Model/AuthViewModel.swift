@@ -11,6 +11,7 @@ import FirebaseFirestore
 import Combine
 
 class AuthViewModel: ObservableObject {
+    @Published var name:String?
     @Published var user: User?
     @Published var signInState: SignInState = .signedOut
     @Published var signInError: String = ""  
@@ -63,6 +64,29 @@ class AuthViewModel: ObservableObject {
         } catch {
             signInError = "Error signing out: \(error.localizedDescription)"
             signInState = .error(signInError)
+        }
+    }
+    func fetchUserName() async throws {
+        guard let userId = user?.uid else {
+            throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "User is not authenticated"])
+        }
+
+        let userReference = Firestore.firestore().collection("Users").document(userId)
+        do {
+            let documentSnapshot = try await userReference.getDocument()
+            guard let userData = documentSnapshot.data(),
+                  let userName = userData["name"] as? String else {
+                throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "User name not found"])
+            }
+
+            DispatchQueue.main.async {
+                self.name = userName
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.signInError = "Failed to fetch user name: \(error.localizedDescription)"
+                self.signInState = .error(self.signInError)
+            }
         }
     }
 }

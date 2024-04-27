@@ -23,6 +23,8 @@ struct PokketApp: App {
                 NavigationStack {
                     MainView()
                         .environmentObject(authViewModel)  // Pass AuthViewModel using environmentObject
+                        .navigationTitle("Pokket")
+                        .navigationBarTitleDisplayMode(.inline)
                 }
             } else {
                 // No logged in user, go to LoginView

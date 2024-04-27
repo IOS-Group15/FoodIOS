@@ -34,35 +34,35 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
 
 **Required Must-have Stories**
 
-- [ ] User can sign up for a new account to begin managing their budget efficiently.
-- [ ] User can securely log in to access their budget information, ensuring privacy and data security.
-- [ ] User can track their expenses over a budget period to monitor their spending.
-- [ ] User can accurately categorize their expenses, providing insights into spending habits for better financial management.
+- [x] User can sign up for a new account to begin managing their budget efficiently.
+- [x] User can securely log in to access their budget information, ensuring privacy and data security.
+- [x] User can track their expenses over a budget period to monitor their spending.
+- [x] User can accurately categorize their expenses, providing insights into spending habits for better financial management.
 - [x] User can see monthly budgets for different expense categories, enabling them to control their spending effectively.
 - [ ] User receives notifications when they exceed their budget limits, helping them avoid overspending and stay within their financial boundaries.
 - [ ] User can track their progress towards financial goals, fostering motivation and accountability in achieving desired objectives.
 
 **Optional Nice-to-have Stories**
 
-- [ ] User can persist their user information across working sessions for convenience.
+- [x] User can persist their user information across working sessions for convenience.
 - [ ] User can customize their budget period, displaying the total days left in the budget period for effective budget planning and management.
 - [ ] User has the option to pay with third-party platforms such as PayPal or Venmo, offering flexibility and convenience in payment methods.
 - [ ] User can export their budget data (such as expenses and savings) to an Excel (.xlsx) file for further analysis or record-keeping.
 
 ### 2. Screen Archetypes
-- [ ] **Login Screen**
+- [x] **Login Screen**
   * User can login
-- [ ] **Registration Screen**
+- [x] **Registration Screen**
   * User can create a new account
 - [ ] **Dashboard Screen**
   * User can view an overview of their budget and financial progress.
-- [ ] **Expense Screen**
+- [x] **Expense Screen**
   * User can track and categorize their expenses.
-- [ ] **Add a Transaction Screen**
+- [x] **Add a Transaction Screen**
   * User can add a transaction to their expenses.
 - [x] **Budget Screen**
   * User can see their budget for different expense categories.
-- [ ] **Add a Budget Screen**
+- [x] **Add a Budget Screen**
   * User can add a budget limit for different expense categories.
 - [ ] **Settings Screen**
   * User can access and adjust app settings.
@@ -120,6 +120,13 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
   </div>
 
 ## Sprint 1
+<div>
+    <a href="https://www.loom.com/share/f9dd9f0171b44d179575e8c440f0fcf3">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f9dd9f0171b44d179575e8c440f0fcf3-with-play.gif">
+    </a>
+  </div>
+
+## Sprint 2
 <div>
     <a href="https://www.loom.com/share/f9dd9f0171b44d179575e8c440f0fcf3">
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f9dd9f0171b44d179575e8c440f0fcf3-with-play.gif">

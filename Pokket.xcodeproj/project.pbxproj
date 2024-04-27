@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E7065B12BDD62DA005DE93D /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 6E7065B02BDD62DA005DE93D /* Model */; };
 		6E7065B32BDD62E5005DE93D /* View in Resources */ = {isa = PBXBuildFile; fileRef = 6E7065B22BDD62E5005DE93D /* View */; };
+		6E7065BD2BDD63FF005DE93D /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 6E7065BC2BDD63FF005DE93D /* Model */; };
 		6ED4DCB82BD33C2300032E6B /* PokketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED4DCB72BD33C2300032E6B /* PokketApp.swift */; };
 		6ED4DCBC2BD33C2500032E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED4DCBB2BD33C2500032E6B /* Assets.xcassets */; };
 		6ED4DCBF2BD33C2500032E6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED4DCBE2BD33C2500032E6B /* Preview Assets.xcassets */; };
@@ -43,8 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E7065B02BDD62DA005DE93D /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 		6E7065B22BDD62E5005DE93D /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
+		6E7065BC2BDD63FF005DE93D /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 		6ED4DCB42BD33C2300032E6B /* Pokket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED4DCB72BD33C2300032E6B /* PokketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokketApp.swift; sourceTree = "<group>"; };
 		6ED4DCBB2BD33C2500032E6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		6ED4DCB62BD33C2300032E6B /* Pokket */ = {
 			isa = PBXGroup;
 			children = (
-				6E7065B02BDD62DA005DE93D /* Model */,
+				6E7065BC2BDD63FF005DE93D /* Model */,
 				6ED4DCB72BD33C2300032E6B /* PokketApp.swift */,
 				6E7065B22BDD62E5005DE93D /* View */,
 				6ED4DCBB2BD33C2500032E6B /* Assets.xcassets */,
@@ -217,9 +217,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7065BD2BDD63FF005DE93D /* Model in Resources */,
 				6ED4DCBF2BD33C2500032E6B /* Preview Assets.xcassets in Resources */,
 				6ED4DCBC2BD33C2500032E6B /* Assets.xcassets in Resources */,
-				6E7065B12BDD62DA005DE93D /* Model in Resources */,
 				6E7065B32BDD62E5005DE93D /* View in Resources */,
 				81E6C2282BD43AA10002857A /* GoogleService-Info.plist in Resources */,
 			);

@@ -20,7 +20,7 @@ struct PokketApp: App {
         WindowGroup {
             if authViewModel.user != nil { // <-- Check if you have a non-nil user (means there is a logged in user)
                 MainView()
-                    .environment(authViewModel)
+                    .environmentObject(authViewModel)
             } else {
                 // No logged in user, go to LoginView
                 LoginView()

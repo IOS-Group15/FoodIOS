@@ -19,8 +19,10 @@ struct PokketApp: App {
     var body: some Scene {
         WindowGroup {
             if authViewModel.user != nil { // <-- Check if you have a non-nil user (means there is a logged in user)
-                MainView()
-                    .environmentObject(authViewModel)
+                NavigationStack {
+                    MainView()
+                        .environmentObject(authViewModel)
+                }
             } else {
                 // No logged in user, go to LoginView
                 LoginView()

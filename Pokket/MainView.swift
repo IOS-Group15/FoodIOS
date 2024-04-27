@@ -27,6 +27,8 @@ struct MainView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
+        .navigationTitle("Pokket")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

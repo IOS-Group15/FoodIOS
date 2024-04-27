@@ -119,8 +119,6 @@ struct BudgetListView: View {
                 }
             }
             .padding(.vertical, 5)
-            .navigationTitle("Pokket")
-            .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: BudgetCategory.self) { budgetCategory in
                 Text("Detail View for \(budgetCategory.name)")
             }

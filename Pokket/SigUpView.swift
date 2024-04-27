@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @Environment(AuthViewModel.self) var authViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
@@ -21,6 +21,7 @@ struct SignUpView: View {
     @State private var passwordsMatch: Bool = true
     @State private var isSignUpSuccessful: Bool = false
     @State private var signUpButtonPressed: Bool = false // Track if sign-up button is pressed
+    @State private var errorMessage: String = ""
     
     var body: some View {
         NavigationView {
@@ -73,6 +74,7 @@ struct SignUpView: View {
                                 .foregroundColor(.gray)
                         }
                     }
+//                    .font(.system(size: 20))
                     
                     Rectangle()
                         .frame(height: 1)
@@ -119,7 +121,6 @@ struct SignUpView: View {
                     signUpButtonPressed = true // Set the flag when sign-up button is pressed
                     signUp()
                 }) {
-                    
                     Text("Sign Up")
                         .foregroundColor(Color.white)
                         .frame(maxWidth: .infinity)
@@ -128,8 +129,15 @@ struct SignUpView: View {
                         .cornerRadius(10)
                 }
                 .padding(.horizontal, 32)
-                .fullScreenCover(isPresented: $isSignUpSuccessful, content: MainView.init)
-                
+                .alert(isPresented: $isSignUpSuccessful) {
+                    Alert(title: Text("Sign Up Successful"), message: Text("You are now signed up and logged in."), dismissButton: .default(Text("OK")))
+                }
+                .alert(isPresented: Binding<Bool>.constant(!errorMessage.isEmpty), content: {
+                    Alert(title: Text("Sign Up Error"), message: Text(errorMessage), dismissButton: .default(Text("OK"), action: {
+                        // Clear the error message after showing the alert
+                        errorMessage = ""
+                    }))
+                })
             }
         }
     }
@@ -140,32 +148,26 @@ struct SignUpView: View {
             // For example, you can set a flag to show an error message
             // or display an alert to inform the user that they need to agree to terms
             // Here, I'll just print a message
-            print("Please agree to the Terms & Conditions")
+            errorMessage = "Please agree to the Terms & Conditions"
             return
         }
         
-        guard password == confirmPassword else {
-            // Show alert or handle password mismatch
-            passwordsMatch = false
+        guard password == confirmPassword, password.count >= 6 else {
+            errorMessage = "Password validation failed: Ensure passwords match and are at least 6 characters."
             return
         }
         
-        isPasswordValid = password.count >= 6 // Password validation
-        
-        if !isEmailValid || !passwordsMatch || !isPasswordValid {
-            // Validation failed
+        guard isEmailValid else {
+            errorMessage = "Please enter a valid email"
             return
         }
         
         Task {
             do {
                 try await authViewModel.signUp(name: name, email: email, password: password)
-                print("signed up")
                 isSignUpSuccessful = true
-                // Handle successful signup
             } catch {
-                // Handle signup error
-                print("Error at SignUP \(error.localizedDescription)")
+                errorMessage = error.localizedDescription
             }
         }
     }

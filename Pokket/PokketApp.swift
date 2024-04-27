@@ -15,11 +15,10 @@ struct PokketApp: App {
     init() {
         FirebaseApp.configure()
     }
-
+    
     var body: some Scene {
         WindowGroup {
             if authViewModel.user != nil { // <-- Check if you have a non-nil user (means there is a logged in user)
-                // We have a logged in user, go to MainView
                 NavigationStack {
                     MainView()
                         .environmentObject(authViewModel)  // Pass AuthViewModel using environmentObject

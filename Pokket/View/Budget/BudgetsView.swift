@@ -120,8 +120,6 @@ struct BudgetListView: View {
                 
             }
             .padding(.vertical, 5)
-            .navigationTitle("Pokket")
-            .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: BudgetCategory.self) { budgetCategory in
                 EditBudgetView(budgetCategory: budgetCategory)
             }

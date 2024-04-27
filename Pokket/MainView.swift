@@ -22,7 +22,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Budgets", systemImage: "dollarsign.circle")
                 }
-            Text("Settings")
+            SettigsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }

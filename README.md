@@ -34,20 +34,20 @@ Pokket simplifies financial tracking and budgeting by allowing users to set up a
 
 **Required Must-have Stories**
 
-* User can sign up for a new account to begin managing their budget efficiently.
-* User can securely log in to access their budget information, ensuring privacy and data security.
-* User can track their expenses over a budget period to monitor their spending.
-* User can accurately categorize their expenses, providing insights into spending habits for better financial management.
-* User can see monthly budgets for different expense categories, enabling them to control their spending effectively.
-* User receives notifications when they exceed their budget limits, helping them avoid overspending and stay within their financial boundaries.
-* User can track their progress towards financial goals, fostering motivation and accountability in achieving desired objectives.
+- [ ] User can sign up for a new account to begin managing their budget efficiently.
+- [ ] User can securely log in to access their budget information, ensuring privacy and data security.
+- [ ] User can track their expenses over a budget period to monitor their spending.
+- [ ] User can accurately categorize their expenses, providing insights into spending habits for better financial management.
+- [x] User can see monthly budgets for different expense categories, enabling them to control their spending effectively.
+- [ ] User receives notifications when they exceed their budget limits, helping them avoid overspending and stay within their financial boundaries.
+- [ ] User can track their progress towards financial goals, fostering motivation and accountability in achieving desired objectives.
 
 **Optional Nice-to-have Stories**
 
-* User can persist their user information across working sessions for convenience.
-* User can customize their budget period, displaying the total days left in the budget period for effective budget planning and management.
-* User has the option to pay with third-party platforms such as PayPal or Venmo, offering flexibility and convenience in payment methods.
-* User can export their budget data (such as expenses and savings) to an Excel (.xlsx) file for further analysis or record-keeping.
+- [ ] User can persist their user information across working sessions for convenience.
+- [ ] User can customize their budget period, displaying the total days left in the budget period for effective budget planning and management.
+- [ ] User has the option to pay with third-party platforms such as PayPal or Venmo, offering flexibility and convenience in payment methods.
+- [ ] User can export their budget data (such as expenses and savings) to an Excel (.xlsx) file for further analysis or record-keeping.
 
 ### 2. Screen Archetypes
 - [ ] **Login Screen**

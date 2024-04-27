@@ -8,24 +8,28 @@
 import SwiftUI
 import FirebaseCore
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-        return true
-    }
-}
-
 @main
 struct PokketApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var authViewModel = AuthViewModel()  // Use StateObject for lifecycle management
 
     init() {
-        UITableView.appearance().backgroundColor = .clear
+        FirebaseApp.configure()
     }
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            if authViewModel.user != nil { // <-- Check if you have a non-nil user (means there is a logged in user)
+                // We have a logged in user, go to MainView
+                NavigationStack {
+                    MainView()
+                        .environmentObject(authViewModel)  // Pass AuthViewModel using environmentObject
+                }
+            } else {
+                // No logged in user, go to LoginView
+                LoginView()
+                    .environmentObject(authViewModel)
+            }
         }
     }
 }
+

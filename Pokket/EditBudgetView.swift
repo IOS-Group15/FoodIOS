@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct EditBudgetView: View {
-    @StateObject var budgetManager = BudgetManager()
-    @Binding var budgetCategory: BudgetCategory
+    @State var budgetCategory: BudgetCategory
     @State private var showingAlert = false
     
     var body: some View {
@@ -48,8 +47,8 @@ struct EditBudgetView: View {
             })
             .alert("Budget Added", isPresented: $showingAlert) {
                 Button("OK", role: .cancel) {
-                    budgetManager.updateBudgetCategory(budgetCategory)
-                    budgetManager.load()
+                    BudgetManager.shared.updateBudgetCategory(budgetCategory)
+                    BudgetManager.shared.load()
                 }
             } message: {
                 Text("The new budget has been added.")
@@ -57,11 +56,9 @@ struct EditBudgetView: View {
             .padding(.horizontal)
             .padding(.horizontal)
         }
-        //        .navigationTitle("Edit Budget")
-        //        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    EditBudgetView(budgetCategory: .constant(BudgetCategory(name: "", budgetAmount: 0.0, numberOfTransactions: 0, percentageChange: 0.0, currentSpent: 0.0, categoryType: .entertainment, budgetPeriod: .monthly)))
+    EditBudgetView(budgetCategory: BudgetCategory(name: "", budgetAmount: 0.0, numberOfTransactions: 0, percentageChange: 0.0, currentSpent: 0.0, categoryType: .entertainment, budgetPeriod: .monthly))
 }

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct BudgetCategory: Identifiable, Hashable, Codable {
-    var id = UUID()
+    @DocumentID var id: String?
     var name: String
     var budgetAmount: Double
     let numberOfTransactions: Int
@@ -23,8 +24,8 @@ enum BudgetCategoryType: String, CaseIterable, Codable {
 }
 
 enum BudgetPeriod: String, CaseIterable, Codable {
-        case monthly, semester
-    }
+    case monthly, semester
+}
 
 struct BudgetsView: View {
     @State private var path = NavigationPath()
@@ -36,21 +37,23 @@ struct BudgetsView: View {
     }
     
     var body: some View {
-            VStack {
-                ScrollView {
-                    VStack {
-                        BudgetListView(budgetTitle: "Monthly Budget", budgetCategories: $budgetManager.monthlyBudgetCategories, datePeriod: "Apr 01 - Apr 30")
-                        BudgetListView(budgetTitle: "Semester Budget", budgetCategories: $budgetManager.semesterBudgetCategories, datePeriod: "Jan 01 - Jun 30")
-                    }
+        VStack {
+            ScrollView {
+                VStack {
+                    BudgetListView(budgetTitle: "Monthly Budget", budgetCategories: $budgetManager.monthlyBudgetCategories, datePeriod: "Apr 01 - Apr 30")
+                    BudgetListView(budgetTitle: "Semester Budget", budgetCategories: $budgetManager.semesterBudgetCategories, datePeriod: "Jan 01 - Jun 30")
                 }
-                Spacer()
-                NavigationLink(destination: AddBudgetView(budgetManager: budgetManager)) {
-                    GreenButton(imageSystemName: "plus", text: "Add New Budget")
-                }
+                .padding(.horizontal)
+                .padding()
             }
-            .onAppear(perform: budgetManager.load)
+            Spacer()
+            NavigationLink(destination: AddBudgetView(budgetManager: budgetManager)) {
+                GreenButton(imageSystemName: "plus", text: "Add New Budget")
+            }
             .padding(.horizontal)
-            .padding(.horizontal)
+            .padding()
+        }
+        .onAppear(perform: budgetManager.load)
     }
 }
 
@@ -96,16 +99,16 @@ struct BudgetListView: View {
                                     .font(.headline)
                                     .foregroundStyle(.black)
                                 Text("/ $\(budgetCategory.budgetAmount, specifier: "%.2f")")
-                                                                    .font(.caption)
-                                                                    .foregroundStyle(.gray)
-                                                                                         
+                                    .font(.caption)
+                                    .foregroundStyle(.gray)
+                                
                             }
                         }
                         .frame(maxHeight: 40)
                         
                         ProgressView(value: budgetCategory.currentSpent / budgetCategory.budgetAmount, total: 1)
-                                                            .progressViewStyle(.linear)
-                                                            .tint(budgetCategory.currentSpent > budgetCategory.budgetAmount ? .red : .green)
+                            .progressViewStyle(.linear)
+                            .tint(budgetCategory.currentSpent > budgetCategory.budgetAmount ? .red : .green)
                         HStack {
                             Spacer()
                             Text("\(budgetCategory.percentageChange > 0 ? "↓" : "↑")\(abs(budgetCategory.percentageChange), specifier: "%.1f")% compared to last month")
@@ -120,10 +123,7 @@ struct BudgetListView: View {
             .navigationTitle("Pokket")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: BudgetCategory.self) { budgetCategory in
-                EditBudgetView(budgetCategory: $selectedBudgetCategory)
-                    .onAppear() {
-                        selectedBudgetCategory = budgetCategory
-                    }
+                EditBudgetView(budgetCategory: budgetCategory)
             }
         }
         .padding(.bottom)

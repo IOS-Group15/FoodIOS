@@ -13,33 +13,30 @@ class BudgetManager: ObservableObject {
     @Published var semesterBudgetCategories: [BudgetCategory] = []
     
     private let db = Firestore.firestore()
+    static let shared = BudgetManager()
     
     init() {
     }
     
     func addBudgetCategory(_ category: BudgetCategory) {
-        // Combine all budget categories into a single array on Firestore
-        let db = Firestore.firestore()
         do {
-            try db.collection("budgetCategories").addDocument(from: category)
+            let docRef = try db.collection("budgetCategories").addDocument(from: category)
         } catch {
             print("Error adding budget category: \(error)")
         }
     }
     
     func updateBudgetCategory(_ category: BudgetCategory) {
-        // Update the budget category on Firestore
-        let db = Firestore.firestore()
-        do {
-            try db.collection("budgetCategories").document(category.id.uuidString).setData(from: category)
-        } catch {
-            print("Error updating budget category: \(error)")
+        if let id = category.id {
+            do {
+                try db.collection("budgetCategories").document(id).setData(from: category)
+            } catch {
+                print("Error updating budget category: \(error)")
+            }
         }
     }
     
     func load() {
-        // Load data from Firestore or other data source
-        let db = Firestore.firestore()
         db.collection("budgetCategories").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")

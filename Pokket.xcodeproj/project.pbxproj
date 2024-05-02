@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112DF0762BDD742900B6525D /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DF0752BDD742900B6525D /* NotificationSettingsView.swift */; };
+		112DF0782BDD743400B6525D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DF0772BDD743400B6525D /* SettingsView.swift */; };
 		6E7065C92BDD64BE005DE93D /* BudgetMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065BE2BDD64BD005DE93D /* BudgetMananger.swift */; };
-		6E7065CA2BDD64BE005DE93D /* SettigsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065BF2BDD64BD005DE93D /* SettigsView.swift */; };
 		6E7065CB2BDD64BE005DE93D /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C02BDD64BD005DE93D /* EditBudgetView.swift */; };
 		6E7065CC2BDD64BE005DE93D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C12BDD64BD005DE93D /* AuthViewModel.swift */; };
 		6E7065CD2BDD64BE005DE93D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7065C22BDD64BD005DE93D /* LoginView.swift */; };
@@ -54,8 +55,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112DF0752BDD742900B6525D /* NotificationSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		112DF0772BDD743400B6525D /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6E7065BE2BDD64BD005DE93D /* BudgetMananger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetMananger.swift; sourceTree = "<group>"; };
-		6E7065BF2BDD64BD005DE93D /* SettigsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettigsView.swift; sourceTree = "<group>"; };
 		6E7065C02BDD64BD005DE93D /* EditBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBudgetView.swift; sourceTree = "<group>"; };
 		6E7065C12BDD64BD005DE93D /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		6E7065C22BDD64BD005DE93D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -112,16 +114,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112DF0792BDD745000B6525D /* Settings  */ = {
+			isa = PBXGroup;
+			children = (
+				112DF0772BDD743400B6525D /* SettingsView.swift */,
+				112DF0752BDD742900B6525D /* NotificationSettingsView.swift */,
+			);
+			path = "Settings ";
+			sourceTree = "<group>";
+		};
 		6E7065D42BDD6528005DE93D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				112DF0792BDD745000B6525D /* Settings  */,
 				6E7065D62BDD6540005DE93D /* Budget */,
 				6E7065C72BDD64BE005DE93D /* Elements.swift */,
 				6E7065C22BDD64BD005DE93D /* LoginView.swift */,
 				6E7065D72BDD6BF9005DE93D /* TransactionsView.swift */,
 				6E7065D92BDD6C18005DE93D /* AddTransactionsView.swift */,
 				6E7065C32BDD64BD005DE93D /* MainView.swift */,
-				6E7065BF2BDD64BD005DE93D /* SettigsView.swift */,
 				6E7065C42BDD64BD005DE93D /* SigUpView.swift */,
 			);
 			path = View;
@@ -296,7 +307,8 @@
 				6E7065CC2BDD64BE005DE93D /* AuthViewModel.swift in Sources */,
 				6E7065D82BDD6BF9005DE93D /* TransactionsView.swift in Sources */,
 				6ED4DCB82BD33C2300032E6B /* PokketApp.swift in Sources */,
-				6E7065CA2BDD64BE005DE93D /* SettigsView.swift in Sources */,
+				112DF0782BDD743400B6525D /* SettingsView.swift in Sources */,
+				112DF0762BDD742900B6525D /* NotificationSettingsView.swift in Sources */,
 				6E7065CF2BDD64BE005DE93D /* SigUpView.swift in Sources */,
 				6E7065C92BDD64BE005DE93D /* BudgetMananger.swift in Sources */,
 				6E7065D22BDD64BE005DE93D /* Elements.swift in Sources */,
